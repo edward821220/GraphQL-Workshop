@@ -5,6 +5,7 @@ import (
 	"graphql-workshop/graph"
 	"os"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 
@@ -47,12 +48,13 @@ func main() {
 	}
 
 	gin.SetMode(os.Getenv("GIN_MODE"))
+
 	r := gin.Default()
 
+	r.Use(cors.Default())
 	r.Use(GinContextToContextMiddleware())
 
 	r.POST("/query", graphqlHandler())
-
 	r.GET("/", playgroundHandler())
 
 	r.Run(":" + os.Getenv("PORT"))
