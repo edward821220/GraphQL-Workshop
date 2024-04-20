@@ -13,8 +13,18 @@ import (
 
 // UpdateEmployee is the resolver for the updateEmployee field.
 func (r *mutationResolver) UpdateEmployee(ctx context.Context, companyID string, employeeID string) (*model.Employee, error) {
-	fmt.Println("hi")
-	panic(fmt.Errorf("not implemented: UpdateEmployee - updateEmployee"))
+	for _, c := range tools.CompaniesData {
+		if c.ID == companyID {
+			for _, e := range c.Employees {
+				if e.ID == employeeID {
+					e.Updated = true
+					return e, nil
+				}
+			}
+			return nil, fmt.Errorf("employee not found")
+		}
+	}
+	return nil, fmt.Errorf("company not found")
 }
 
 // Companies is the resolver for the companies field.
@@ -24,7 +34,12 @@ func (r *queryResolver) Companies(ctx context.Context) ([]*model.Company, error)
 
 // Company is the resolver for the company field.
 func (r *queryResolver) Company(ctx context.Context, id string) (*model.Company, error) {
-	panic(fmt.Errorf("not implemented: Company - company"))
+	for _, c := range tools.CompaniesData {
+		if c.ID == id {
+			return c, nil
+		}
+	}
+	return nil, fmt.Errorf("company not found")
 }
 
 // Mutation returns MutationResolver implementation.
