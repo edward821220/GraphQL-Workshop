@@ -54,7 +54,7 @@ func main() {
 	r.Use(cors.Default())
 	r.Use(GinContextToContextMiddleware())
 
-	r.POST("/query", graphqlHandler())
+	r.POST("/graphql", graphqlHandler())
 	r.GET("/", playgroundHandler())
 
 	r.Run(":" + os.Getenv("PORT"))
