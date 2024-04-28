@@ -2,7 +2,7 @@
 
 #### Preset
 
-- Step1: Run `bun install` or `npm install`
+- Step1: Run `bun install --frozen-lockfile` or `npm ci`
 
 - Step2: Update the API URL.
 
