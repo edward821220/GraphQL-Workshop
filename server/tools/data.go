@@ -77,16 +77,4 @@ var CompaniesData = []*model.Company{
 		Headquarters: "Buckinghamshire, England",
 		Industry:     "Food & Beverage",
 	},
-	{
-		ID:                "7",
-		Name:              "Vanshi Global",
-		StockPrice:        208.91,
-		OutstandingShares: 2813000000,
-		Employees: []*model.Employee{
-			{ID: "1", Name: "Iris", Updated: false},
-		},
-		Founded:      1997,
-		Headquarters: "Los Angeles, CA",
-		Industry:     "Robotics",
-	},
 }

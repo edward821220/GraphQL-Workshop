@@ -8,6 +8,8 @@
 
 - Step3: Run `watch` script in package.json to generate the types files for graphql api.
 
+- Step4: Run `dev` script
+
 #### Todo (Basic)
 
 - See the comments in src/App.tsx file
