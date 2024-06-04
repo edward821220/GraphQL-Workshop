@@ -15,3 +15,5 @@
 - See the comments in src/App.tsx file
 
 #### Todo (Advanced)
+
+- Write a Dockerfile to build image (golang 1.22) & run container, running server in your local environment.

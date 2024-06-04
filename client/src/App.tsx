@@ -2,17 +2,17 @@ import { useQuery } from "@apollo/client";
 import { gql } from "./__generated__/gql";
 
 // TODO 1 - Define GET_COMPANY gql
-const GET_COMPANY = gql(`query`);
+// const GET_COMPANY = gql(`query`);
 
 // TODO 4 - Define UPDATE_EMPLOYEE gql
 
 function App() {
   // TODO 2 - use GET_COMPANY gql to fetch data
-  const { loading, error, data } = useQuery();
+  // const { loading, error, data } = useQuery();
   // TODO 5 - use UPDATE_EMPLOYEE gql to update data and set the fn to be called when button is clicked, render the updated status in the UI
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error : {error.message}</p>;
+  // if (loading) return <p>Loading...</p>;
+  // if (error) return <p>Error : {error.message}</p>;
 
   return (
     <main className="max-w-6xl mx-auto py-6">
